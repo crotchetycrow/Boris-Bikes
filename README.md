@@ -51,3 +51,9 @@ DONE
 - [x] Feature-test the feature again.
 
 DONE
+
+11. Using Instance Variables
+ - [x] Write a feature test for docking a bike at a docking station
+ - [x] Write a unit test for the method you need to add to DockingStation to make docking possible
+ - [x] Pass both tests
+ - [ ] Use an instance variable with attr_reader to do a full test-implementation cycle for the second User Story above
