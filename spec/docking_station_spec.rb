@@ -1,18 +1,28 @@
 require 'docking_station'
 require 'bike'
 
-test = DockingStation.new
-
 describe DockingStation do
+  let(:bike) { Bike.new }
   it { is_expected.to respond_to :release_bike }
-  it 'release_bike' do
-    expect(subject.release_bike).to respond_to :working?
+  describe 'release_bike' do
+    it "releases bike" do
+      @bike = subject.dock(bike)
+    expect(subject.release_bike).to eq [bike]
   end
-  it { is_expected.to respond_to(:dock).with(1).argument }
-  it { is_expected.to respond_to :bike_docked }
-  it 'docking bike' do
-    bike = Bike.new
-    docked_station = subject.dock(bike)
-    expect(docked_station).to have_atributes(:biked_docked => bike)
+  it "raises error 'no bikes left' when there are no bikes" do
+  expect { subject.release_bike }.to raise_error "No bikes left"
+
+  end
+end
+  describe "dock" do
+    it { is_expected.to respond_to(:dock).with(1).argument }
+    it 'docking bike' do
+    expect(subject.dock(bike)).to eq [bike]
+    end
+    it "limits number of bikes" do
+      subject.capacity.times { subject.dock(bike) }
+
+      expect {subject.dock Bike.new }.to raise_error "There is already a bike here"
+    end
   end
 end

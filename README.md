@@ -56,4 +56,14 @@ DONE
  - [x] Write a feature test for docking a bike at a docking station
  - [x] Write a unit test for the method you need to add to DockingStation to make docking possible
  - [x] Pass both tests
- - [ ] Use an instance variable with attr_reader to do a full test-implementation cycle for the second User Story above
+ - [x] Use an instance variable with attr_reader to do a full test-implementation cycle for the second User Story above
+
+ DONE
+
+ 12. Raising Exceptions
+ - [x] Feature test the feature you are building using irb
+ - [x] Use {} and raise_error syntax in your RSpec unit test to test exception raising
+ - [x] Use the fail or raise keyword to raise an exception in your code (not your tests)
+ - [x] Make the test pass by raising an exception
+ - [x] Explain why you use curly braces in the RSpec error handling syntax to your partner
+ - [x] Feature-test the feature again.
